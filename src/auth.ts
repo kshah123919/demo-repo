@@ -3,8 +3,10 @@ export interface User {
 }
 
 export function validateUser(user: User) {
-  if (!user.email) {
-    throw new Error("Email is required");
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailRegex.test(user.email)) {
+    throw new Error("Invalid email format");
   }
 
   return true;
