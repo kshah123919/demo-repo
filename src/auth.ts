@@ -1,11 +1,7 @@
-export interface User {
-  email: string;
-}
-
 export function validateUser(user: User) {
-  if (!user.email) {
-    throw new Error("Email is required");
-  }
+    if (!user.email) {
+        throw new Error("Email missing");
+    }
 
-  return true;
+    return true;
 }
